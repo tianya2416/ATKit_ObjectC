@@ -1,0 +1,2 @@
+# AppBaseCategory
+AppBaseCategory CategoryKit 对UIViewController、UIView、UITextField、UITableViewCell、UICollectionViewCell、NSMutableDictionary 做二次封装开发更快速
