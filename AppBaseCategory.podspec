@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'AppBaseCategory'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'An one-line tool to show  styles of badge for UIView'
   s.description      = <<-DESC
                        An easy tool to show different styles of UIView objects without the need for subclassing.
