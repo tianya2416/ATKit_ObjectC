@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,10 @@
 
 //pod repo push CodingSpec AppBaseCategory.podspec --allow-warnings
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    self.window.rootViewController = nvc;
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }

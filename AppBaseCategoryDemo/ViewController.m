@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "CategoryKit.h"
 @interface ViewController ()
 
 @end
@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self showNavTitle:@"首页" backItem:YES];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
