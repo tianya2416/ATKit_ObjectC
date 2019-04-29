@@ -1,4 +1,5 @@
-AppBaseCategory
+AppBaseCategoryDemo
+
 1、AppBaseCategory简介:
 
     UIViewController:集成了导航条返回按钮的封装使用异常简单
@@ -47,5 +48,30 @@ AppBaseCategory
     - (UIViewController *)topPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
     + (UIViewController *)rootTopPresentedController;
     + (UIViewController *)rootTopPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
+    /**
+    *  StoryBoard 创建
+    */
+    + (instancetype)vcFromStoryBoard:(NSString *)sbName theId:(NSString *)theId;
     
+    UIView使用方式
+    
+    + (NSString *)nibName;
+    + (instancetype)instanceView;
+
+    /**
+    Returns the topMost UIViewController object in hierarchy.
+    */
+    @property (nonatomic, readonly, strong) UIViewController *topMostController;
+    /**
+    Returns the superView of provided class type.
+    */
+    - (__kindof UIView *)superviewOfClass:(Class)classType;
+    /**
+    Returns the navigationController, if exsit.
+    */
+    @property (nonatomic, readonly, strong) UINavigationController *getNavigationController;
+    /**
+    Returns the findFirstResponder, self or subview, if exsit.
+    */
+    - (UIView *)findFirstResponder;
     
