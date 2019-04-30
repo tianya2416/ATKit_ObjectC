@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'AppBaseCategory'
   s.version          = '0.0.7'
-  s.summary          = 'An one-line tool to show  styles of badge for UIView'
+  s.summary          = 'Some classes and class category commonly used in iOS rapid development'
   s.description      = <<-DESC
-                       An easy tool to show different styles of UIView objects without the need for subclassing.
+                       Some classes and class category commonly used in iOS rapid development.
                        DESC
   s.homepage         = 'http://blog.cocoachina.com/227971'
   s.license          = 'MIT'
