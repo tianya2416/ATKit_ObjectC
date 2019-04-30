@@ -12,16 +12,21 @@
 /**
  *  设置导航栏标题
  */
-- (void)setNavItemTitle:(NSString *)title;
-- (void)setBackItem:(UIImage *)image;
-- (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage;
+- (void)showNavTitle:(NSString *)title;//default YES
 - (void)showNavTitle:(NSString *)title backItem:(BOOL)show;
+/**
+ *  设置返回按钮
+ */
+- (void)setBackItem:(UIImage *)image;//default backItem
+- (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage;
+/**
+ @brief 回收键盘
+ */
 - (void)setKeyBoardDismiss;
 /**
  @brief  设置小导航栏
  */
 - (void)setLargeTitleDisplayModeNever;
-
 /**
  *  导航栏 按钮，color为空时，标示默认颜色
  */
@@ -37,7 +42,6 @@
 - (void)setNavRightItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action;
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title action:(SEL)action;
 - (void)setNavRightItemWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color action:(SEL)action;
-
 /**
  *  返回上一个界面
  */
@@ -45,7 +49,6 @@
 - (void)goBack:(BOOL)animated;
 - (void)dismissOrPopToRootControlelr;
 - (void)dismissOrPopToRootController:(BOOL)animated;
-
 /**
  *  获取根目录
  */
@@ -53,7 +56,6 @@
 - (UIViewController *)topPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
 + (UIViewController *)rootTopPresentedController;
 + (UIViewController *)rootTopPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
-
 /**
  *  控制器数组中 仅存在一个实例
  */

@@ -11,7 +11,6 @@
 @interface UIView (Base)
 + (NSString *)nibName;
 + (instancetype)instanceView;
-
 /**
  Returns the topMost UIViewController object in hierarchy.
  */

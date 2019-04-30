@@ -8,6 +8,7 @@
 
 #import "UIViewController+ATKit.h"
 
+
 @implementation UIViewController (ATKit)
 
 - (void)setKeyBoardDismiss
@@ -20,11 +21,21 @@
          self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
     }
 }
-- (void)setNavItemTitle:(NSString *)title {
+- (void)showNavTitle:(NSString *)title {
+    [self showNavTitle:title backItem:YES];
+}
+- (void)showNavTitle:(NSString *)title backItem:(BOOL)show{
     self.navigationItem.title = title;
+    if (show) {
+        [self setBackItem:[UIImage imageNamed:@"icon_nav_back"] closeItem:[UIImage imageNamed:@"icon_nav_close"]];
+    }
+    else {
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = YES;
+    }
 }
 - (void)setBackItem:(UIImage *)image {
-    return [self setBackItem:image closeItem:image];
+    [self setBackItem:image closeItem:image];
 }
 - (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage {
     if (self.navigationController.viewControllers.count == 1 && self.presentingViewController) {
@@ -42,16 +53,6 @@
         self.navigationItem.hidesBackButton = YES;
     }
     ((UIButton *)self.navigationItem.leftBarButtonItem.customView).contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-}
-- (void)showNavTitle:(NSString *)title backItem:(BOOL)show {
-    [self setNavItemTitle:title];
-    if (show) {
-        [self setBackItem:[UIImage imageNamed:@"icon_nav_back"] closeItem:[UIImage imageNamed:@"icon_nav_close"]];
-    }
-    else {
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.hidesBackButton = YES;
-    }
 }
 - (UIBarButtonItem *)navItemWithImage:(UIImage *)image action:(SEL)action {
     return [self navItemWithImage:image title:nil color:nil action:action];
