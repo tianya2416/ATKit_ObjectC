@@ -7,7 +7,8 @@ AppBaseCategoryDemo
     UITextField、文本限制
     UITableViewCell、快速初始化
     UICollectionViewCell、快速初始化
-    NSMutableDictionary 安全容错等
+    NSMutableDictionary、NSMutableArray 安全容错等
+    ATMacro、常见宏的定义屏幕宽高，iPad、iPhoneX、iPhoneXR、iPhoneXMax、等比缩放屏幕宽高等
     
 2、AppBaseCategory集成方式:
 
@@ -25,10 +26,16 @@ AppBaseCategoryDemo
     /**
     *  设置导航栏标题
     */
-    - (void)setNavItemTitle:(NSString *)title;
-    - (void)setBackItem:(UIImage *)image;
-    - (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage;
+    - (void)showNavTitle:(NSString *)title;//default YES
     - (void)showNavTitle:(NSString *)title backItem:(BOOL)show;
+    /**
+    *  设置返回按钮
+    */
+    - (void)setBackItem:(UIImage *)image;//default backItem
+    - (void)setBackItem:(UIImage *)image closeItem:(UIImage *)closeImage;
+    /**
+    @brief 回收键盘
+    */
     - (void)setKeyBoardDismiss;
     /**
     @brief  设置小导航栏

@@ -18,6 +18,11 @@
 #define iPhone_XMax [ATMacro iPhoneXMax]
 #define iPhone_Bang (iPhone_X  || iPhone_XR || iPhone_XMax)
 
+#define STATUS_BAR_HIGHT    (iPhone_Bang ? 44: 20)//状态栏
+#define NAVI_BAR_HIGHT      (iPhone_Bang ? 88: 64)//导航栏
+#define TAB_BAR_ADDING      (iPhone_Bang ? 34 : 0)//iphoneX斜刘海
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATMacro : NSObject
