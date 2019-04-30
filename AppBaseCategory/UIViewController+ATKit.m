@@ -58,7 +58,7 @@
     return [self navItemWithImage:image title:nil color:nil action:action];
 }
 - (UIBarButtonItem *)navItemWithTitle:(NSString *)title action:(SEL)action {
-    return [self navItemWithImage:nil title:title color:[UIColor grayColor] action:action];
+    return [self navItemWithImage:nil title:title color:nil action:action];
 }
 - (UIBarButtonItem *)navItemWithTitle:(NSString *)title color:(UIColor *)color action:(SEL)action {
     return [self navItemWithImage:nil title:title color:color action:action];
@@ -74,7 +74,7 @@
 }
 - (UIBarButtonItem *)navItem:(BOOL)rightItem image:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitleColor:color forState:UIControlStateNormal];
+    [button setTitleColor:color ?: [UIColor grayColor] forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

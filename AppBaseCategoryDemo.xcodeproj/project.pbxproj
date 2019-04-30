@@ -22,6 +22,11 @@
 		0F1111412267178E000EE7BF /* UITextField+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111332267178E000EE7BF /* UITextField+ATKit.m */; };
 		0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111352267178E000EE7BF /* UIView+ATKit.m */; };
 		0F1111432267178E000EE7BF /* UICollectionViewCell+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */; };
+		0F234E9322781A8500988E3C /* ATMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9222781A8500988E3C /* ATMacro.m */; };
+		0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9522781C9900988E3C /* BaseTableViewController.m */; };
+		0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9922781C9900988E3C /* BaseNavigationController.m */; };
+		0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9A22781C9900988E3C /* BaseConnectionController.m */; };
+		0F234EA022781C9900988E3C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9C22781C9900988E3C /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +59,16 @@
 		0F1111382267178E000EE7BF /* ATHightlightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATHightlightButton.h; sourceTree = "<group>"; };
 		0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ATKit.m"; sourceTree = "<group>"; };
 		0F11113A2267178E000EE7BF /* UITableViewCell+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ATKit.h"; sourceTree = "<group>"; };
+		0F234E9122781A8500988E3C /* ATMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMacro.h; sourceTree = "<group>"; };
+		0F234E9222781A8500988E3C /* ATMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMacro.m; sourceTree = "<group>"; };
+		0F234E9522781C9900988E3C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		0F234E9622781C9900988E3C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		0F234E9722781C9900988E3C /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		0F234E9822781C9900988E3C /* BaseConnectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseConnectionController.h; sourceTree = "<group>"; };
+		0F234E9922781C9900988E3C /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		0F234E9A22781C9900988E3C /* BaseConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConnectionController.m; sourceTree = "<group>"; };
+		0F234E9B22781C9900988E3C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		0F234E9C22781C9900988E3C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +102,7 @@
 		0F1111102267172E000EE7BF /* AppBaseCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F234E9422781C9300988E3C /* Base */,
 				0F1111112267172E000EE7BF /* AppDelegate.h */,
 				0F1111122267172E000EE7BF /* AppDelegate.m */,
 				0F1111142267172E000EE7BF /* ViewController.h */,
@@ -107,6 +123,8 @@
 				0F11112F2267178E000EE7BF /* ATHightlightButton.m */,
 				0F11112B2267178E000EE7BF /* ATImageTopButton.h */,
 				0F1111312267178E000EE7BF /* ATImageTopButton.m */,
+				0F234E9122781A8500988E3C /* ATMacro.h */,
+				0F234E9222781A8500988E3C /* ATMacro.m */,
 				0F1111362267178E000EE7BF /* CategoryKit.h */,
 				0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */,
 				0F1111282267178E000EE7BF /* NSMutableDictionary+ATKit.m */,
@@ -124,6 +142,21 @@
 				0F1111302267178E000EE7BF /* UIViewController+ATKit.m */,
 			);
 			path = AppBaseCategory;
+			sourceTree = "<group>";
+		};
+		0F234E9422781C9300988E3C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0F234E9822781C9900988E3C /* BaseConnectionController.h */,
+				0F234E9A22781C9900988E3C /* BaseConnectionController.m */,
+				0F234E9722781C9900988E3C /* BaseNavigationController.h */,
+				0F234E9922781C9900988E3C /* BaseNavigationController.m */,
+				0F234E9622781C9900988E3C /* BaseTableViewController.h */,
+				0F234E9522781C9900988E3C /* BaseTableViewController.m */,
+				0F234E9B22781C9900988E3C /* BaseViewController.h */,
+				0F234E9C22781C9900988E3C /* BaseViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,14 +233,19 @@
 				0F1111162267172E000EE7BF /* ViewController.m in Sources */,
 				0F11113E2267178E000EE7BF /* UIViewController+ATKit.m in Sources */,
 				0F1111212267172F000EE7BF /* main.m in Sources */,
+				0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */,
 				0F1111402267178E000EE7BF /* NSNumber+ATKit.m in Sources */,
 				0F11113D2267178E000EE7BF /* ATHightlightButton.m in Sources */,
+				0F234EA022781C9900988E3C /* BaseViewController.m in Sources */,
 				0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */,
 				0F11113F2267178E000EE7BF /* ATImageTopButton.m in Sources */,
 				0F1111132267172E000EE7BF /* AppDelegate.m in Sources */,
 				0F1111412267178E000EE7BF /* UITextField+ATKit.m in Sources */,
+				0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */,
 				0F11113B2267178E000EE7BF /* NSMutableDictionary+ATKit.m in Sources */,
+				0F234E9322781A8500988E3C /* ATMacro.m in Sources */,
 				0F11113C2267178E000EE7BF /* UITableViewCell+ATKit.m in Sources */,
+				0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
