@@ -20,4 +20,10 @@
 + (BOOL)iPhoneXMax{
     return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)&& ![ATMacro iPad] : NO);
 }
++ (BOOL)iPhoneBang{
+    if (@available(iOS 11.0, *)) {
+        return ([UIApplication sharedApplication].delegate.window.safeAreaInsets.top > 20) ? YES : NO;
+    }
+    return NO;
+}
 @end

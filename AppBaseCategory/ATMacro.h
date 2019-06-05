@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)iPhoneX;
 + (BOOL)iPhoneXR;
 + (BOOL)iPhoneXMax;
+//刘海
++ (BOOL)iPhoneBang;
 @end
 
 NS_ASSUME_NONNULL_END

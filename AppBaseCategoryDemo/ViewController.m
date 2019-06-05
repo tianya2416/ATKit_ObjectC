@@ -23,6 +23,7 @@
     [self.listData addSafeObject:@"push"];
     [self.listData addSafeObject:@"present"];
     [self.tableView reloadData];
+    NSLog(@"%@",@([ATMacro iPhoneBang]));
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

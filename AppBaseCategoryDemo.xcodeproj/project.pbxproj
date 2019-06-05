@@ -22,6 +22,8 @@
 		0F1111412267178E000EE7BF /* UITextField+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111332267178E000EE7BF /* UITextField+ATKit.m */; };
 		0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111352267178E000EE7BF /* UIView+ATKit.m */; };
 		0F1111432267178E000EE7BF /* UICollectionViewCell+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */; };
+		0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22D99A22A754AD00521090 /* BaseTabBarController.m */; };
+		0F22D99E22A7551600521090 /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22D99D22A7551600521090 /* BaseTabbarView.m */; };
 		0F234E9322781A8500988E3C /* ATMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9222781A8500988E3C /* ATMacro.m */; };
 		0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9522781C9900988E3C /* BaseTableViewController.m */; };
 		0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9922781C9900988E3C /* BaseNavigationController.m */; };
@@ -59,6 +61,10 @@
 		0F1111382267178E000EE7BF /* ATHightlightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATHightlightButton.h; sourceTree = "<group>"; };
 		0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ATKit.m"; sourceTree = "<group>"; };
 		0F11113A2267178E000EE7BF /* UITableViewCell+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ATKit.h"; sourceTree = "<group>"; };
+		0F22D99922A754AD00521090 /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		0F22D99A22A754AD00521090 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		0F22D99C22A7551600521090 /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
+		0F22D99D22A7551600521090 /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
 		0F234E9122781A8500988E3C /* ATMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMacro.h; sourceTree = "<group>"; };
 		0F234E9222781A8500988E3C /* ATMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMacro.m; sourceTree = "<group>"; };
 		0F234E9522781C9900988E3C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
@@ -155,6 +161,10 @@
 				0F234E9522781C9900988E3C /* BaseTableViewController.m */,
 				0F234E9B22781C9900988E3C /* BaseViewController.h */,
 				0F234E9C22781C9900988E3C /* BaseViewController.m */,
+				0F22D99922A754AD00521090 /* BaseTabBarController.h */,
+				0F22D99A22A754AD00521090 /* BaseTabBarController.m */,
+				0F22D99C22A7551600521090 /* BaseTabbarView.h */,
+				0F22D99D22A7551600521090 /* BaseTabbarView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -233,6 +243,8 @@
 				0F1111162267172E000EE7BF /* ViewController.m in Sources */,
 				0F11113E2267178E000EE7BF /* UIViewController+ATKit.m in Sources */,
 				0F1111212267172F000EE7BF /* main.m in Sources */,
+				0F22D99E22A7551600521090 /* BaseTabbarView.m in Sources */,
+				0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */,
 				0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */,
 				0F1111402267178E000EE7BF /* NSNumber+ATKit.m in Sources */,
 				0F11113D2267178E000EE7BF /* ATHightlightButton.m in Sources */,
@@ -388,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AH5A6D2MR2;
 				INFOPLIST_FILE = AppBaseCategoryDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -405,6 +418,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AH5A6D2MR2;
 				INFOPLIST_FILE = AppBaseCategoryDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
