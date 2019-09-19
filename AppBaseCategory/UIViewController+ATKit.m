@@ -74,6 +74,7 @@
 }
 - (UIBarButtonItem *)navItem:(BOOL)rightItem image:(UIImage *)image title:(NSString *)title color:(UIColor *)color target:(id)target action:(SEL)action {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 40, 40)];
     [button setTitleColor:color ?: [UIColor grayColor] forState:UIControlStateNormal];
     [button setImage:image forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
