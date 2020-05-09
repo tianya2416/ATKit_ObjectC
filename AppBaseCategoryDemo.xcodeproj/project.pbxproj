@@ -29,7 +29,8 @@
 		0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9922781C9900988E3C /* BaseNavigationController.m */; };
 		0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9A22781C9900988E3C /* BaseConnectionController.m */; };
 		0F234EA022781C9900988E3C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9C22781C9900988E3C /* BaseViewController.m */; };
-		0FE09A7E233462CE00665C66 /* AppBaseCategory.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0FE09A7D233462CE00665C66 /* AppBaseCategory.podspec */; };
+		0F4C5D6924667EF70030D2C4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C5D6824667EF70030D2C4 /* README.md */; };
+		0FE09A7E233462CE00665C66 /* ATKit_ObjectC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0FE09A7D233462CE00665C66 /* ATKit_ObjectC.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +77,8 @@
 		0F234E9A22781C9900988E3C /* BaseConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConnectionController.m; sourceTree = "<group>"; };
 		0F234E9B22781C9900988E3C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0F234E9C22781C9900988E3C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		0FE09A7D233462CE00665C66 /* AppBaseCategory.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppBaseCategory.podspec; sourceTree = SOURCE_ROOT; };
+		0F4C5D6824667EF70030D2C4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		0FE09A7D233462CE00665C66 /* ATKit_ObjectC.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATKit_ObjectC.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 		0F1111052267172E000EE7BF = {
 			isa = PBXGroup;
 			children = (
-				0F1111272267178E000EE7BF /* AppBaseCategory */,
+				0F1111272267178E000EE7BF /* Source */,
 				0F1111102267172E000EE7BF /* AppBaseCategoryDemo */,
 				0F11110F2267172E000EE7BF /* Products */,
 			);
@@ -124,10 +126,11 @@
 			path = AppBaseCategoryDemo;
 			sourceTree = "<group>";
 		};
-		0F1111272267178E000EE7BF /* AppBaseCategory */ = {
+		0F1111272267178E000EE7BF /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0FE09A7D233462CE00665C66 /* AppBaseCategory.podspec */,
+				0F4C5D6824667EF70030D2C4 /* README.md */,
+				0FE09A7D233462CE00665C66 /* ATKit_ObjectC.podspec */,
 				0F1111382267178E000EE7BF /* ATHightlightButton.h */,
 				0F11112F2267178E000EE7BF /* ATHightlightButton.m */,
 				0F11112B2267178E000EE7BF /* ATImageTopButton.h */,
@@ -150,7 +153,7 @@
 				0F1111372267178E000EE7BF /* UIViewController+ATKit.h */,
 				0F1111302267178E000EE7BF /* UIViewController+ATKit.m */,
 			);
-			path = AppBaseCategory;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		0F234E9422781C9300988E3C /* Base */ = {
@@ -230,7 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F11111E2267172F000EE7BF /* LaunchScreen.storyboard in Resources */,
-				0FE09A7E233462CE00665C66 /* AppBaseCategory.podspec in Resources */,
+				0FE09A7E233462CE00665C66 /* ATKit_ObjectC.podspec in Resources */,
+				0F4C5D6924667EF70030D2C4 /* README.md in Resources */,
 				0F11111B2267172F000EE7BF /* Assets.xcassets in Resources */,
 				0F1111192267172E000EE7BF /* Main.storyboard in Resources */,
 			);

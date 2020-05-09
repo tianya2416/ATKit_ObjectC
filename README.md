@@ -12,7 +12,8 @@ AppBaseCategoryDemo
     
 2、AppBaseCategory集成方式:
 
-    pod 'AppBaseCategory'
+    pod 'ATKit_ObjectC'
+    pod 'ATKit_Swift' swift版本
     
 3、AppBaseCategory使用方式:
     

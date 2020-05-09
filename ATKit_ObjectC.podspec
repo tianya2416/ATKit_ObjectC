@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  s.name             = 'AppBaseCategory'
-  s.version          = '0.1.1'
+  s.name             = 'ATKit_ObjectC'
+  s.version          = '0.1.2'
   s.summary          = 'Some classes and class category commonly used in iOS rapid development'
   s.description      = <<-DESC
                        Some classes and class category commonly used in iOS rapid development.
@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/tianya2416/AppBaseCategory.git', :tag => s.version }
   s.platform         = :ios, '8.0'
   s.requires_arc     = true
-  s.source_files     = 'AppBaseCategory/*.{h,m}'
+  s.source_files     = 'Source/*.{h,m}'
 end
+
 
