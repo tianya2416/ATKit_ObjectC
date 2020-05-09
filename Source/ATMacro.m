@@ -12,17 +12,10 @@
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
 }
 + (BOOL)iPhoneX{
-    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && ![ATMacro iPad] : NO);
-}
-+ (BOOL)iPhoneXR{
-    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && ![ATMacro iPad] : NO);
-}
-+ (BOOL)iPhoneXMax{
-    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size)&& ![ATMacro iPad] : NO);
-}
-+ (BOOL)iPhoneBang{
+    UIView *window = [UIApplication sharedApplication].delegate.window;
     if (@available(iOS 11.0, *)) {
-        return ([UIApplication sharedApplication].delegate.window.safeAreaInsets.top > 20) ? YES : NO;
+        UIEdgeInsets inset = window.safeAreaInsets;
+        return (inset.bottom == 34) || (inset.bottom == 21);
     }
     return NO;
 }

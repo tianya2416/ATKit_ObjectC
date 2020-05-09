@@ -58,7 +58,7 @@
 		0F1111332267178E000EE7BF /* UITextField+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ATKit.m"; sourceTree = "<group>"; };
 		0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ATKit.h"; sourceTree = "<group>"; };
 		0F1111352267178E000EE7BF /* UIView+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ATKit.m"; sourceTree = "<group>"; };
-		0F1111362267178E000EE7BF /* CategoryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryKit.h; sourceTree = "<group>"; };
+		0F1111362267178E000EE7BF /* ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKit.h; sourceTree = "<group>"; };
 		0F1111372267178E000EE7BF /* UIViewController+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ATKit.h"; sourceTree = "<group>"; };
 		0F1111382267178E000EE7BF /* ATHightlightButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATHightlightButton.h; sourceTree = "<group>"; };
 		0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+ATKit.m"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				0F1111312267178E000EE7BF /* ATImageTopButton.m */,
 				0F234E9122781A8500988E3C /* ATMacro.h */,
 				0F234E9222781A8500988E3C /* ATMacro.m */,
-				0F1111362267178E000EE7BF /* CategoryKit.h */,
+				0F1111362267178E000EE7BF /* ATKit.h */,
 				0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */,
 				0F1111282267178E000EE7BF /* NSMutableDictionary+ATKit.m */,
 				0F11112A2267178E000EE7BF /* NSNumber+ATKit.h */,

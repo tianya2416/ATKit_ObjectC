@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "CategoryKit.h"
+#import "ATKit.h"
 #import "BaseNavigationController.h"
 @interface ViewController ()
 @property (strong, nonatomic) NSMutableArray *listData;
@@ -23,7 +23,7 @@
     [self.listData addSafeObject:@"push"];
     [self.listData addSafeObject:@"present"];
     [self.tableView reloadData];
-    NSLog(@"%@",@([ATMacro iPhoneBang]));
+    NSLog(@"%@",@([ATMacro iPhoneX]));
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

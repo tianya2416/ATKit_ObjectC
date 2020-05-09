@@ -13,25 +13,19 @@
 
 #define SCALEW(value) ((CGFloat)((SCREEN_WIDTH * (value) / 375.0f)))
 
-#define iPhone_X    [ATMacro iPhoneX]
-#define iPhone_XR   [ATMacro iPhoneXR]
-#define iPhone_XMax [ATMacro iPhoneXMax]
-#define iPhone_Bang (iPhone_X  || iPhone_XR || iPhone_XMax)
-
-#define STATUS_BAR_HIGHT    (iPhone_Bang ? 44: 20)//状态栏
-#define NAVI_BAR_HIGHT      (iPhone_Bang ? 88: 64)//导航栏
-#define TAB_BAR_ADDING      (iPhone_Bang ? 34 : 0)//iphoneX斜刘海
+#define iPhone_X            [ATMacro iPhoneX]//is iPhoneX
+#define STATUS_BAR_HIGHT    (iPhoneX ? 44: 20)//iPhoneX 44,other 20
+#define NAVI_BAR_HIGHT      (iPhoneX ? 88: 64)//iPhoneX 88,other 64
+#define TAB_BAR_ADDING      (iPhoneX ? 34 : 0)//iphoneX 34,other 0
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATMacro : NSObject
+
 + (BOOL)iPad;
 + (BOOL)iPhoneX;
-+ (BOOL)iPhoneXR;
-+ (BOOL)iPhoneXMax;
-//刘海
-+ (BOOL)iPhoneBang;
+
 @end
 
 NS_ASSUME_NONNULL_END

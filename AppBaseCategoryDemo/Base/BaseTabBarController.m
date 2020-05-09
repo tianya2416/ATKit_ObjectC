@@ -8,7 +8,7 @@
 
 #import "BaseTabBarController.h"
 #import "BaseNavigationController.h"
-#import "CategoryKit.h"
+#import "ATKit.h"
 @interface BaseTabBarController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *nvcDatas;
 @end
@@ -76,7 +76,7 @@
     [button addTarget:self action:@selector(buttonClickAction) forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
     CGPoint center = self.tabBar.center;
-    center.y = center.y - 15 - (iPhone_Bang ? 32 : 0);
+    center.y = center.y - 15 - (iPhone_X ? 32 : 0);
     button.center = center;
     [self.view addSubview:button];
 }
