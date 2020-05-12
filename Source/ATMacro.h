@@ -11,7 +11,7 @@
 #define SCREEN_WIDTH (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 #define SCREEN_HEIGHT (MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height))
 
-#define SCALEW(value) ((CGFloat)((SCREEN_WIDTH * (value) / 375.0f)))
+#define SCALEW(value)      ((CGFloat)((SCREEN_WIDTH * (value) / 375.0f)))
 
 #define iPhone_X            [ATMacro iPhoneX]//is iPhoneX
 #define STATUS_BAR_HIGHT    (iPhoneX ? 44: 20)//iPhoneX 44,other 20
