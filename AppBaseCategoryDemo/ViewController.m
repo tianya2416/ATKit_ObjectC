@@ -23,7 +23,7 @@
     [self.listData addSafeObject:@"push"];
     [self.listData addSafeObject:@"present"];
     [self.tableView reloadData];
-    NSLog(@"%@",@([ATMacro iPhoneX]));
+    NSLog(@"%@",@(NAVI_BAR_HIGHT));
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

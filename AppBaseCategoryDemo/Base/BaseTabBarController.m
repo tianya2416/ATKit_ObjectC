@@ -8,6 +8,7 @@
 
 #import "BaseTabBarController.h"
 #import "BaseNavigationController.h"
+#import "ViewController.h"
 #import "ATKit.h"
 @interface BaseTabBarController ()<UITabBarControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *nvcDatas;
@@ -22,7 +23,7 @@
     [self loadUI];
 }
 - (void)loadUI{
-    UIViewController *home = [[UIViewController alloc] init];
+    ViewController *home = [[ViewController alloc] init];
     home.view.backgroundColor = [UIColor whiteColor];
     [self vcName:home title:@"首页" imageNormal:@"tabBar_icon_schedule_default" selectedImageName:@"tabBar_icon_schedule"];
     
@@ -76,7 +77,7 @@
     [button addTarget:self action:@selector(buttonClickAction) forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
     CGPoint center = self.tabBar.center;
-    center.y = center.y - 15 - (iPhone_X ? 32 : 0);
+    center.y = center.y - 15 - (iPhoneX ? 32 : 0);
     button.center = center;
     [self.view addSubview:button];
 }

@@ -11,7 +11,7 @@
 + (BOOL)iPad{
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
 }
-+ (BOOL)iPhoneX{
++ (BOOL)iPhone_X{
     UIView *window = [UIApplication sharedApplication].delegate.window;
     if (@available(iOS 11.0, *)) {
         UIEdgeInsets inset = window.safeAreaInsets;
