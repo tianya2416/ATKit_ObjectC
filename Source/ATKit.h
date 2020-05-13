@@ -20,8 +20,6 @@ FOUNDATION_EXPORT const unsigned char CategoryKitVersionString[];
 #import "ATHightlightButton.h"
 
 #import "UIView+ATKit.h"
-#import "NSNumber+ATKit.h"
-#import "UITextField+ATKit.h"
 #import "UITableViewCell+ATKit.h"
 #import "UIViewController+ATKit.h"
 #import "NSMutableDictionary+ATKit.h"

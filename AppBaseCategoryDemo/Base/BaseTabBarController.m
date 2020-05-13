@@ -77,7 +77,7 @@
     [button addTarget:self action:@selector(buttonClickAction) forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
     CGPoint center = self.tabBar.center;
-    center.y = center.y - 15 - (iPhoneX ? 32 : 0);
+    center.y = center.y - 15 - (iPhone_X ? 32 : 0);
     button.center = center;
     [self.view addSubview:button];
 }

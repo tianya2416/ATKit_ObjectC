@@ -18,8 +18,6 @@
 		0F11113D2267178E000EE7BF /* ATHightlightButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F11112F2267178E000EE7BF /* ATHightlightButton.m */; };
 		0F11113E2267178E000EE7BF /* UIViewController+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111302267178E000EE7BF /* UIViewController+ATKit.m */; };
 		0F11113F2267178E000EE7BF /* ATImageTopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111312267178E000EE7BF /* ATImageTopButton.m */; };
-		0F1111402267178E000EE7BF /* NSNumber+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111322267178E000EE7BF /* NSNumber+ATKit.m */; };
-		0F1111412267178E000EE7BF /* UITextField+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111332267178E000EE7BF /* UITextField+ATKit.m */; };
 		0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111352267178E000EE7BF /* UIView+ATKit.m */; };
 		0F1111432267178E000EE7BF /* UICollectionViewCell+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */; };
 		0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22D99A22A754AD00521090 /* BaseTabBarController.m */; };
@@ -45,8 +43,6 @@
 		0F11111F2267172F000EE7BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F1111202267172F000EE7BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F1111282267178E000EE7BF /* NSMutableDictionary+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ATKit.m"; sourceTree = "<group>"; };
-		0F1111292267178E000EE7BF /* UITextField+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ATKit.h"; sourceTree = "<group>"; };
-		0F11112A2267178E000EE7BF /* NSNumber+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ATKit.h"; sourceTree = "<group>"; };
 		0F11112B2267178E000EE7BF /* ATImageTopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATImageTopButton.h; sourceTree = "<group>"; };
 		0F11112C2267178E000EE7BF /* UIView+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ATKit.h"; sourceTree = "<group>"; };
 		0F11112D2267178E000EE7BF /* UITableViewCell+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ATKit.m"; sourceTree = "<group>"; };
@@ -54,8 +50,6 @@
 		0F11112F2267178E000EE7BF /* ATHightlightButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATHightlightButton.m; sourceTree = "<group>"; };
 		0F1111302267178E000EE7BF /* UIViewController+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ATKit.m"; sourceTree = "<group>"; };
 		0F1111312267178E000EE7BF /* ATImageTopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATImageTopButton.m; sourceTree = "<group>"; };
-		0F1111322267178E000EE7BF /* NSNumber+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ATKit.m"; sourceTree = "<group>"; };
-		0F1111332267178E000EE7BF /* UITextField+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ATKit.m"; sourceTree = "<group>"; };
 		0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ATKit.h"; sourceTree = "<group>"; };
 		0F1111352267178E000EE7BF /* UIView+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ATKit.m"; sourceTree = "<group>"; };
 		0F1111362267178E000EE7BF /* ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATKit.h; sourceTree = "<group>"; };
@@ -139,15 +133,11 @@
 				0F234E9222781A8500988E3C /* ATMacro.m */,
 				0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */,
 				0F1111282267178E000EE7BF /* NSMutableDictionary+ATKit.m */,
-				0F11112A2267178E000EE7BF /* NSNumber+ATKit.h */,
-				0F1111322267178E000EE7BF /* NSNumber+ATKit.m */,
 				0F4C5D6824667EF70030D2C4 /* README.md */,
 				0F11112E2267178E000EE7BF /* UICollectionViewCell+ATKit.h */,
 				0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */,
 				0F11113A2267178E000EE7BF /* UITableViewCell+ATKit.h */,
 				0F11112D2267178E000EE7BF /* UITableViewCell+ATKit.m */,
-				0F1111292267178E000EE7BF /* UITextField+ATKit.h */,
-				0F1111332267178E000EE7BF /* UITextField+ATKit.m */,
 				0F11112C2267178E000EE7BF /* UIView+ATKit.h */,
 				0F1111352267178E000EE7BF /* UIView+ATKit.m */,
 				0F1111372267178E000EE7BF /* UIViewController+ATKit.h */,
@@ -254,13 +244,11 @@
 				0F22D99E22A7551600521090 /* BaseTabbarView.m in Sources */,
 				0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */,
 				0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */,
-				0F1111402267178E000EE7BF /* NSNumber+ATKit.m in Sources */,
 				0F11113D2267178E000EE7BF /* ATHightlightButton.m in Sources */,
 				0F234EA022781C9900988E3C /* BaseViewController.m in Sources */,
 				0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */,
 				0F11113F2267178E000EE7BF /* ATImageTopButton.m in Sources */,
 				0F1111132267172E000EE7BF /* AppDelegate.m in Sources */,
-				0F1111412267178E000EE7BF /* UITextField+ATKit.m in Sources */,
 				0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */,
 				0F11113B2267178E000EE7BF /* NSMutableDictionary+ATKit.m in Sources */,
 				0F234E9322781A8500988E3C /* ATMacro.m in Sources */,
