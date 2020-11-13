@@ -13,26 +13,26 @@
 
 #define SCALEW(value)       ((CGFloat)((SCREEN_WIDTH * (value) / 375.0f)))
 
-#define iPhone_X            [ATMacro at_iphonex]
-#define STATUS_BAR_HIGHT    [ATMacro at_status_bar]
-#define NAVI_BAR_HIGHT      [ATMacro at_navi_bar]
-#define TAB_BAR_ADDING      [ATMacro at_tab_bar]
+#define iPhone_X            [ATMacro at_iphoneX]
+#define STATUS_BAR_HIGHT    [ATMacro at_statusBar]
+#define NAVI_BAR_HIGHT      [ATMacro at_naviBar]
+#define TAB_BAR_ADDING      [ATMacro at_tabBar]
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ATMacro : NSObject
 
-+ (BOOL)at_iphonex;
++ (BOOL)at_iphoneX;
 
 /// iPhone_X 44,other 20
-+ (CGFloat)at_status_bar;
++ (CGFloat)at_statusBar;
 
 /// iPhone_X 88,other 64
-+ (CGFloat)at_navi_bar;
++ (CGFloat)at_naviBar;
 
 /// iPhone_X 34,other 0
-+ (CGFloat)at_tab_bar;
++ (CGFloat)at_tabBar;
 
 @end
 

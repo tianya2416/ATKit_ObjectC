@@ -7,31 +7,40 @@
 //
 #import "ATMacro.h"
 #import <UIKit/UIKit.h>
-#define AT_Phone_X            [ATMacro at_iphonex]
+#define at_inset       [UIApplication sharedApplication].delegate.window.safeAreaInsets
 @implementation ATMacro
 + (BOOL)iPhone{
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
-+ (BOOL)at_iphonex{
-    UIView *window = [UIApplication sharedApplication].delegate.window;
++ (BOOL)at_iphoneX{
     if (@available(iOS 11.0, *)) {
-        UIEdgeInsets inset = window.safeAreaInsets;
-        return ((inset.bottom == 34) || (inset.bottom == 21)) &&[ATMacro iPhone] ;
+        return at_inset.bottom > 0 ? true : false;  //34 or 21
     }
     return NO;
 }
-/// iPhone_X 44,other 20
-+ (CGFloat)at_status_bar{
-    return  AT_Phone_X ? 44 : 20;
+// iPhone_X more 44,other equal 20
++ (CGFloat)at_statusBar{
+    if (@available(iOS 11.0, *)) {
+        return at_inset.top;
+    }
+    return 20;
 }
-
-/// iPhone_X 88,other 64
-+ (CGFloat)at_navi_bar{
-    return  AT_Phone_X ? 88 : 64;
-}
-
 /// iPhone_X 34,other 0
-+ (CGFloat)at_tab_bar{
-    return  AT_Phone_X ? 34 : 0;
++ (CGFloat)at_tabBar{
+    if (@available(iOS 11.0, *)) {
+        return at_inset.bottom;
+    }
+    return 0;
 }
+/// iPhone_X 88,other 64
++ (CGFloat)at_naviBar{
+    return  (44 + [ATMacro at_statusBar]);
+}
+
+//    if (@available(iOS 13.0, *)) {
+//        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager;
+//        return  statusBarManager.statusBarFrame.size.height;
+//    } else {
+//        return  [UIApplication sharedApplication].statusBarFrame.size.height;
+//    }
 @end

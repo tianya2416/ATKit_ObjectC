@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BaseTabBarController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,6 +17,7 @@
 
 //pod repo push CodingSpec AppBaseCategory.podspec --allow-warnings
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [BaseTabBarController new];
     [self.window makeKeyAndVisible];
