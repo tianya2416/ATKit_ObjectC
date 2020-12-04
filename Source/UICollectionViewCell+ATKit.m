@@ -2,8 +2,8 @@
 //  UICollectionViewCell+ATKit.m
 //  Postre
 //
-//  Created by 王炜圣 on 2017/4/6.
-//  Copyright © 2017年 王炜圣. All rights reserved.
+//  Created by wangws1990 on 2017/4/6.
+//  Copyright © 2017年 wangws1990. All rights reserved.
 //
 
 #import "UICollectionViewCell+ATKit.h"
@@ -20,7 +20,7 @@
 }
 + (instancetype)cellForCollectionView:(UICollectionView *)collectionView
                             indexPath:(NSIndexPath *)indexPath
-                               config:(void (^)(__kindof UICollectionViewCell *))config {
+                               config:(void (^NS_NOESCAPE)(__kindof UICollectionViewCell * cell))config {
     return [self cellForCollectionView:collectionView
                              indexPath:indexPath
                             identifier:nil
@@ -29,26 +29,9 @@
 + (instancetype)cellForCollectionView:(UICollectionView *)collectionView
                             indexPath:(NSIndexPath *)indexPath
                            identifier:(NSString *)identifier
-                               config:(void (^)(__kindof UICollectionViewCell *))config {
+                               config:(void (^NS_NOESCAPE)(__kindof UICollectionViewCell * cell))config {
     assert(indexPath);
-    
-    identifier = identifier ?: NSStringFromClass(self);
-    
-    BOOL hasRegister = [[collectionView valueForKeyPath:@"cellNibDict"] valueForKeyPath:identifier]
-    || [[collectionView valueForKeyPath:@"cellClassDict"] valueForKeyPath:identifier];
-    
-    if (!hasRegister) {
-        // 通过判断是否存在xib文件
-        if ([[NSBundle mainBundle] URLForResource:self.nibName withExtension:@"nib"]) {
-            [collectionView registerNib:[UINib nibWithNibName:self.nibName bundle:nil]
-             forCellWithReuseIdentifier:identifier];
-        }
-        // 不是XIB
-        else {
-            [collectionView registerClass:self.class forCellWithReuseIdentifier:identifier];
-        }
-    }
-    
+    identifier = [self cellForRegister:collectionView identifier:identifier];
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier
                                                                            forIndexPath:indexPath];
     static NSInteger configTag = 32241981;
@@ -60,6 +43,23 @@
     }
     
     return cell;
+}
++ (NSString *)cellForRegister:(UICollectionView *)collectionView identifier:(NSString *)identifier{
+    identifier  = identifier ?: NSStringFromClass(self);
+    BOOL hasRegister = [[collectionView valueForKeyPath:@"cellNibDict"] valueForKeyPath:identifier]
+    || [[collectionView valueForKeyPath:@"cellClassDict"] valueForKeyPath:identifier];
+    if (!hasRegister) {
+        // 通过判断是否存在xib文件
+        if ([[NSBundle mainBundle] URLForResource:self.nibName withExtension:@"nib"]) {
+            [collectionView registerNib:[UINib nibWithNibName:self.nibName bundle:nil]
+             forCellWithReuseIdentifier:identifier];
+        }
+        // 不是XIB
+        else {
+            [collectionView registerClass:self.class forCellWithReuseIdentifier:identifier];
+        }
+    }
+    return  identifier;
 }
 @end
 

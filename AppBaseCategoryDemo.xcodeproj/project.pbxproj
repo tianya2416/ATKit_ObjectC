@@ -30,6 +30,10 @@
 		0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9922781C9900988E3C /* BaseNavigationController.m */; };
 		0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9A22781C9900988E3C /* BaseConnectionController.m */; };
 		0F234EA022781C9900988E3C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9C22781C9900988E3C /* BaseViewController.m */; };
+		0F79E5822579CB6C00E5F30A /* UICollectionView+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79E5812579CB6C00E5F30A /* UICollectionView+ATKit.m */; };
+		0F79E58F257A0BA000E5F30A /* ATCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79E58D257A0BA000E5F30A /* ATCollectionViewCell.m */; };
+		0F79E590257A0BA000E5F30A /* ATCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F79E58E257A0BA000E5F30A /* ATCollectionViewCell.xib */; };
+		0F79E594257A0C2900E5F30A /* ATGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F79E593257A0C2900E5F30A /* ATGridViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,13 @@
 		0F234E9A22781C9900988E3C /* BaseConnectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseConnectionController.m; sourceTree = "<group>"; };
 		0F234E9B22781C9900988E3C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		0F234E9C22781C9900988E3C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		0F79E5802579CB6C00E5F30A /* UICollectionView+ATKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+ATKit.h"; sourceTree = "<group>"; };
+		0F79E5812579CB6C00E5F30A /* UICollectionView+ATKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+ATKit.m"; sourceTree = "<group>"; };
+		0F79E58C257A0BA000E5F30A /* ATCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATCollectionViewCell.h; sourceTree = "<group>"; };
+		0F79E58D257A0BA000E5F30A /* ATCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATCollectionViewCell.m; sourceTree = "<group>"; };
+		0F79E58E257A0BA000E5F30A /* ATCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATCollectionViewCell.xib; sourceTree = "<group>"; };
+		0F79E592257A0C2900E5F30A /* ATGridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATGridViewController.h; sourceTree = "<group>"; };
+		0F79E593257A0C2900E5F30A /* ATGridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATGridViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +122,21 @@
 		0F1111102267172E000EE7BF /* AppBaseCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0F234E9422781C9300988E3C /* Base */,
 				0F1111112267172E000EE7BF /* AppDelegate.h */,
 				0F1111122267172E000EE7BF /* AppDelegate.m */,
+				0F11111A2267172F000EE7BF /* Assets.xcassets */,
+				0F79E58C257A0BA000E5F30A /* ATCollectionViewCell.h */,
+				0F79E58D257A0BA000E5F30A /* ATCollectionViewCell.m */,
+				0F79E58E257A0BA000E5F30A /* ATCollectionViewCell.xib */,
+				0F234E9422781C9300988E3C /* Base */,
+				0F11111F2267172F000EE7BF /* Info.plist */,
+				0F11111C2267172F000EE7BF /* LaunchScreen.storyboard */,
+				0F1111202267172F000EE7BF /* main.m */,
+				0F1111172267172E000EE7BF /* Main.storyboard */,
 				0F1111142267172E000EE7BF /* ViewController.h */,
 				0F1111152267172E000EE7BF /* ViewController.m */,
-				0F1111172267172E000EE7BF /* Main.storyboard */,
-				0F11111A2267172F000EE7BF /* Assets.xcassets */,
-				0F11111C2267172F000EE7BF /* LaunchScreen.storyboard */,
-				0F11111F2267172F000EE7BF /* Info.plist */,
-				0F1111202267172F000EE7BF /* main.m */,
+				0F79E592257A0C2900E5F30A /* ATGridViewController.h */,
+				0F79E593257A0C2900E5F30A /* ATGridViewController.m */,
 			);
 			path = AppBaseCategoryDemo;
 			sourceTree = "<group>";
@@ -145,6 +161,8 @@
 				0F1111352267178E000EE7BF /* UIView+ATKit.m */,
 				0F1111372267178E000EE7BF /* UIViewController+ATKit.h */,
 				0F1111302267178E000EE7BF /* UIViewController+ATKit.m */,
+				0F79E5802579CB6C00E5F30A /* UICollectionView+ATKit.h */,
+				0F79E5812579CB6C00E5F30A /* UICollectionView+ATKit.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -194,7 +212,7 @@
 		0F1111062267172E000EE7BF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = wangws1990;
 				TargetAttributes = {
 					0F11110D2267172E000EE7BF = {
@@ -225,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F79E590257A0BA000E5F30A /* ATCollectionViewCell.xib in Resources */,
 				0F11111E2267172F000EE7BF /* LaunchScreen.storyboard in Resources */,
 				0F063058253D6A9A00D4C2BB /* ATKit_ObjectC.podspec in Resources */,
 				0F11111B2267172F000EE7BF /* Assets.xcassets in Resources */,
@@ -249,12 +268,15 @@
 				0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */,
 				0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */,
 				0F11113D2267178E000EE7BF /* ATHightlightButton.m in Sources */,
+				0F79E58F257A0BA000E5F30A /* ATCollectionViewCell.m in Sources */,
 				0F234EA022781C9900988E3C /* BaseViewController.m in Sources */,
 				0F1111422267178E000EE7BF /* UIView+ATKit.m in Sources */,
+				0F79E594257A0C2900E5F30A /* ATGridViewController.m in Sources */,
 				0F11113F2267178E000EE7BF /* ATImageTopButton.m in Sources */,
 				0F1111132267172E000EE7BF /* AppDelegate.m in Sources */,
 				0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */,
 				0F11113B2267178E000EE7BF /* NSMutableDictionary+ATKit.m in Sources */,
+				0F79E5822579CB6C00E5F30A /* UICollectionView+ATKit.m in Sources */,
 				0F234E9322781A8500988E3C /* ATMacro.m in Sources */,
 				0F11113C2267178E000EE7BF /* UITableViewCell+ATKit.m in Sources */,
 				0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */,
@@ -309,6 +331,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -368,6 +391,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -402,7 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AH5A6D2MR2;
 				INFOPLIST_FILE = AppBaseCategoryDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +444,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AH5A6D2MR2;
 				INFOPLIST_FILE = AppBaseCategoryDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

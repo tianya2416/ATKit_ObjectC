@@ -37,10 +37,4 @@
     return  (44 + [ATMacro at_statusBar]);
 }
 
-//    if (@available(iOS 13.0, *)) {
-//        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager;
-//        return  statusBarManager.statusBarFrame.size.height;
-//    } else {
-//        return  [UIApplication sharedApplication].statusBarFrame.size.height;
-//    }
 @end

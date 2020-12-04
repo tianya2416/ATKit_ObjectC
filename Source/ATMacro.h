@@ -25,13 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)at_iphoneX;
 
-/// iPhone_X 44,other 20
+
 + (CGFloat)at_statusBar;
 
-/// iPhone_X 88,other 64
+
 + (CGFloat)at_naviBar;
 
-/// iPhone_X 34,other 0
+
 + (CGFloat)at_tabBar;
 
 @end

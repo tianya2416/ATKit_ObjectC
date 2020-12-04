@@ -2,8 +2,8 @@
 //  ATHightlightButton.m
 //  Postre
 //
-//  Created by 王炜圣 on 2017/4/6.
-//  Copyright © 2017年 王炜圣. All rights reserved.
+//  Created by wangws1990 on 2017/4/6.
+//  Copyright © 2017年 wangws1990. All rights reserved.
 //
 
 #import "ATHightlightButton.h"

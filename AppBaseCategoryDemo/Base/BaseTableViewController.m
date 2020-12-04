@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
-
+#import "ATMacro.h"
 @interface BaseTableViewController ()
 
 @end
@@ -16,9 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%lf",[ATMacro at_statusBar]);
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = [UIView new];
     self.tableView.tableFooterView = [UIView new];
+    
 }
 
 - (UITableView *)tableView

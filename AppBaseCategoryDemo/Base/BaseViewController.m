@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "UIViewController+ATKit.h"
 @interface BaseViewController ()<UIGestureRecognizerDelegate>
 
 @end
