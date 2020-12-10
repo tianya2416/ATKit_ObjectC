@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "BaseTabBarController.h"
 #import <UserNotifications/UserNotifications.h>
-#import "ATMacro.h"
 #import "UIViewController+ATKit.h"
 #import "BaseTableViewController.h"
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
@@ -66,7 +65,6 @@
     UIAlertAction *ac = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         BaseTableViewController *vc = [[BaseTableViewController alloc] init];
         vc.view.backgroundColor = [UIColor whiteColor];
-        [vc showNavTitle:[NSString stringWithFormat:@"%lf",[ATMacro at_statusBar]]];
         [[UIViewController rootTopPresentedController].navigationController pushViewController:vc animated:YES];
     }];
     [vc addAction:ac];
@@ -88,7 +86,7 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    NSLog(@"%lf",[ATMacro at_statusBar]);
+
      
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }

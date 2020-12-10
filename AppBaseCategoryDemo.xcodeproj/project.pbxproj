@@ -25,7 +25,6 @@
 		0F1111432267178E000EE7BF /* UICollectionViewCell+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F1111392267178E000EE7BF /* UICollectionViewCell+ATKit.m */; };
 		0F22D99B22A754AD00521090 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22D99A22A754AD00521090 /* BaseTabBarController.m */; };
 		0F22D99E22A7551600521090 /* BaseTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F22D99D22A7551600521090 /* BaseTabbarView.m */; };
-		0F234E9322781A8500988E3C /* ATMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9222781A8500988E3C /* ATMacro.m */; };
 		0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9522781C9900988E3C /* BaseTableViewController.m */; };
 		0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9922781C9900988E3C /* BaseNavigationController.m */; };
 		0F234E9F22781C9900988E3C /* BaseConnectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F234E9A22781C9900988E3C /* BaseConnectionController.m */; };
@@ -69,8 +68,6 @@
 		0F22D99A22A754AD00521090 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		0F22D99C22A7551600521090 /* BaseTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabbarView.h; sourceTree = "<group>"; };
 		0F22D99D22A7551600521090 /* BaseTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabbarView.m; sourceTree = "<group>"; };
-		0F234E9122781A8500988E3C /* ATMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATMacro.h; sourceTree = "<group>"; };
-		0F234E9222781A8500988E3C /* ATMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATMacro.m; sourceTree = "<group>"; };
 		0F234E9522781C9900988E3C /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		0F234E9622781C9900988E3C /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		0F234E9722781C9900988E3C /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -149,8 +146,6 @@
 				0F11112B2267178E000EE7BF /* ATImageTopButton.h */,
 				0F1111312267178E000EE7BF /* ATImageTopButton.m */,
 				0F1111362267178E000EE7BF /* ATKit.h */,
-				0F234E9122781A8500988E3C /* ATMacro.h */,
-				0F234E9222781A8500988E3C /* ATMacro.m */,
 				0F1111342267178E000EE7BF /* NSMutableDictionary+ATKit.h */,
 				0F1111282267178E000EE7BF /* NSMutableDictionary+ATKit.m */,
 				0F11112E2267178E000EE7BF /* UICollectionViewCell+ATKit.h */,
@@ -277,7 +272,6 @@
 				0F234E9D22781C9900988E3C /* BaseTableViewController.m in Sources */,
 				0F11113B2267178E000EE7BF /* NSMutableDictionary+ATKit.m in Sources */,
 				0F79E5822579CB6C00E5F30A /* UICollectionView+ATKit.m in Sources */,
-				0F234E9322781A8500988E3C /* ATMacro.m in Sources */,
 				0F11113C2267178E000EE7BF /* UITableViewCell+ATKit.m in Sources */,
 				0F234E9E22781C9900988E3C /* BaseNavigationController.m in Sources */,
 			);

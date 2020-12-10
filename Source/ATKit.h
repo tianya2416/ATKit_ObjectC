@@ -15,7 +15,6 @@ FOUNDATION_EXPORT double CategoryKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char CategoryKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Category/PublicHeader.h>
-#import "ATMacro.h"
 #import "ATImageTopButton.h"
 #import "ATHightlightButton.h"
 
@@ -24,3 +23,4 @@ FOUNDATION_EXPORT const unsigned char CategoryKitVersionString[];
 #import "UIViewController+ATKit.h"
 #import "NSMutableDictionary+ATKit.h"
 #import "UICollectionViewCell+ATKit.h"
+#import "UICollectionView+ATKit.h"

@@ -9,9 +9,7 @@
 #import "UITableViewCell+ATKit.h"
 
 @implementation UITableViewCell (ATKit)
-+ (NSString *)nibName {
-    return NSStringFromClass(self);
-}
+
 + (CGFloat)cellHeight {
     return 48;
 }
