@@ -133,42 +133,17 @@
 
 
 + (UIViewController *)rootTopPresentedController {
-    return [self rootTopPresentedControllerWihtKeys:nil];
-}
-+ (UIViewController *)rootTopPresentedControllerWihtKeys:(NSArray<NSString *> *)keys {
-    return [[[[UIApplication sharedApplication] delegate] window].rootViewController topPresentedControllerWihtKeys:keys];
+    return [[[[UIApplication sharedApplication] delegate] window].rootViewController topPresentedController];
 }
 - (UIViewController *)topPresentedController {
-    return [self topPresentedControllerWihtKeys:nil];
-}
-- (UIViewController *)topPresentedControllerWihtKeys:(NSArray<NSString *> *)keys {
-    keys = keys ?: @[@"centerViewController", @"contentViewController"];
-    
     UIViewController *rootVC = self;
     if ([rootVC isKindOfClass:[UITabBarController class]]) {
         UITabBarController *tab = (UITabBarController *)rootVC;
         UIViewController *vc = tab.selectedViewController ?: tab.childViewControllers.firstObject;
         if (vc) {
-            return [vc topPresentedControllerWihtKeys:keys];
+            return [vc topPresentedController];
         }
     }
-    
-    for (NSString *key in keys) {
-        if ([rootVC respondsToSelector:NSSelectorFromString(key)]) {
-            UIViewController *vc;
-            @try {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                vc = [rootVC performSelector:NSSelectorFromString(key)];
-#pragma clang diagnostic pop
-            } @catch (NSException *exception) {
-            }
-            if ([vc isKindOfClass:[UIViewController class]]) {
-                return [vc topPresentedControllerWihtKeys:keys];
-            }
-        }
-    }
-    
     while (rootVC.presentedViewController && !rootVC.presentedViewController.isBeingDismissed) {
         rootVC = rootVC.presentedViewController;
     }
@@ -180,35 +155,15 @@
     return rootVC;
 }
 
-- (NSArray<UIViewController *> *)optimizeVcs:(NSArray<UIViewController *> *)vcs {
-    return [self optimizeVcs:vcs maxCount:1];
-}
-- (NSArray<UIViewController *> *)optimizeVcs:(NSArray<UIViewController *> *)vcs maxCount:(NSUInteger)count {
-    NSMutableArray *vcArray = [NSMutableArray arrayWithArray:vcs];
-    [vcArray addObject:self];
-    for (UIViewController *vc in vcArray.reverseObjectEnumerator) {
-        if ([vc isKindOfClass:[self class]]) {
-            if (count) {
-                count--;
-            }
-            else {
-                [vcArray removeObject:vc];
-            }
-        }
-    }
-    return vcArray.copy;
-}
 
-+ (instancetype)vcFromStoryBoard:(NSString *)sbName theId:(NSString *)theId
-{
++ (instancetype)vcFromStoryBoard:(NSString *)sbName theId:(NSString *)theId{
     sbName = sbName ?: [[self class] keyForNib];
     theId = theId ?: [[self class] keyForNib];
     UIStoryboard * story = [UIStoryboard storyboardWithName:sbName bundle:nil];
     UIViewController * viewCtrl = [story instantiateViewControllerWithIdentifier:theId];
     return viewCtrl;
 }
-+ (NSString *)keyForNib
-{
++ (NSString *)keyForNib{
     return NSStringFromClass([self class]);
 }
 @end

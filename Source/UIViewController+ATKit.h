@@ -53,14 +53,7 @@
  *  获取根目录
  */
 - (UIViewController *)topPresentedController;
-- (UIViewController *)topPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
 + (UIViewController *)rootTopPresentedController;
-+ (UIViewController *)rootTopPresentedControllerWihtKeys:(NSArray<NSString *> *)keys;
-/**
- *  控制器数组中 仅存在一个实例
- */
-- (NSArray<UIViewController *> *)optimizeVcs:(NSArray<UIViewController *> *)vcs;
-- (NSArray<UIViewController *> *)optimizeVcs:(NSArray<UIViewController *> *)vcs maxCount:(NSUInteger)count;
 /**
  *  StoryBoard 创建
  */

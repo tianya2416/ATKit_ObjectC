@@ -8,75 +8,101 @@
 
 #import "BaseTabbarView.h"
 #import "ATKit.h"
+#define defaultCenter 1
 @interface BaseTabbarView()
-@property (assign, nonatomic) id <BaseTabbarDelegate>delegate;
 @property (strong, nonatomic) NSArray <UITabBarItem *>*tabbarItems;
 @property (strong, nonatomic) NSMutableArray *listData;
-
+@property (strong, nonatomic) NSString *centerItem;
+@property (assign, nonatomic) NSInteger selectIndex;
 @end
 @implementation BaseTabbarView
-- (instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if (self = [super initWithCoder:aDecoder]) {
-  
-    }
-    return self;
-}
-- (instancetype)initWithFrame:(CGRect)frame{
-    if (self = [super initWithFrame:frame]) {
 
-    }
-    return self;
++ (instancetype)tabbar:(NSArray<UITabBarItem *> *)tabbarItems{
+    return [BaseTabbarView tabbar:tabbarItems centerItem:nil];
 }
-+ (instancetype)tabbar:(NSArray<UITabBarItem *> *)tabbarItems delegate:(id<BaseTabbarDelegate>)delegate{
++(instancetype)tabbar:(NSArray <UITabBarItem *>*)tabbarItems centerItem:(NSString * _Nullable)centerItem{
     BaseTabbarView *vc = [[BaseTabbarView alloc] init];
     vc.tabbarItems = tabbarItems;
-    vc.delegate = delegate;
+    vc.centerItem = centerItem;
     [vc loadUI];
     return vc;
 }
 - (void)loadUI{
+    self.selectIndex = 1;
     self.listData = @[].mutableCopy;
     [self.tabbarItems enumerateObjectsUsingBlock:^(UITabBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ATImageTopButton *button = [ATImageTopButton buttonWithImage:obj.image title:obj.title color:[UIColor colorWithWhite:0.8 alpha:1.0f] target:self action:@selector(buttonAction:)];
-        button.tag = idx + 10000;
+        ATImageTopButton *button = [ATImageTopButton buttonWithType:UIButtonTypeCustom];
+        [button setTitle:obj.title forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [button setImage:obj.image forState:UIControlStateNormal];
+        button.tag = idx;
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
         [button setImage:obj.selectedImage forState:UIControlStateSelected];
-        button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
-        button.imageMarning = 10;
-        button.selected = idx == 0;
-        button.adjustsImageWhenHighlighted = NO;
+        button.titleLabel.font = [UIFont systemFontOfSize:13];
+        button.imageMarning = 5;
         [self addSubview:button];
+        [self.listData addObject:button];
+        [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        
     }];
+    if (self.centerItem) {
+        UIImageView *imageV = [[UIImageView alloc] init];
+        imageV.image = [UIImage imageNamed:self.centerItem];
+        [self addSubview:imageV];
+        UITapGestureRecognizer *tap= [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAction)];
+        imageV.userInteractionEnabled = true;
+        [imageV addGestureRecognizer:tap];
+        imageV.contentMode = UIViewContentModeScaleAspectFit;
+        NSInteger index = self.tabbarItems.count/2;
+        if (self.listData.count >index) {
+            [self.listData insertObject:imageV atIndex:index];
+        }
+    }
+    self.selectIndex = 0;
 }
 - (void)buttonAction:(UIButton *)sender{
-    sender.selected = !sender.selected;
-    if ([self.delegate respondsToSelector:@selector(tabbarView:didSelect:)]) {
-        [self.delegate tabbarView:self didSelect:sender.tag - 10000];
+    self.selectIndex = sender.tag;
+}
+- (void)clickAction{
+    if ([self.tabbarDelegate respondsToSelector:@selector(tabbarView:click:)]) {
+        [self.tabbarDelegate tabbarView:self click:true];
     }
 }
-
+- (void)setSelectIndex:(NSInteger)selectIndex{
+    if (_selectIndex != selectIndex) {
+        _selectIndex = selectIndex;
+        [self.listData enumerateObjectsUsingBlock:^(UIButton *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:UIButton.class]) {
+                obj.selected = selectIndex == obj.tag;
+            }
+        }];
+        if ([self.tabbarDelegate respondsToSelector:@selector(tabbarView:index:)]) {
+            [self.tabbarDelegate tabbarView:self index:_selectIndex];
+        }
+    }
+}
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    NSUInteger count = self.tabbarItems.count;
+    NSUInteger count = self.listData.count;
     if (count > 0) {
-        CGFloat x = 0;
+        __block CGFloat x = 0;
         CGFloat y = 0;
-        CGFloat w = [UIScreen mainScreen].bounds.size.width / count;
-        CGFloat h = self.frame.size.height;
-        for (int i = 0; i < count; i++) {
-            UIButton *btn = [self viewWithTag:10000+i];
-            x = i * w;
-            if (i == 2) {
-                y = -12;
-                h = h + 12;
-            } else {
-                y = 0;
+        CGFloat w = self.frame.size.width / count;
+        CGFloat h = 49;
+        [self.listData enumerateObjectsUsingBlock:^(UIButton  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            x = idx * w;
+            if ([obj isKindOfClass:UIButton.class]) {
+                obj.frame = CGRectMake(x, y, w, h);
+            }else{
+                obj.frame = CGRectMake(x, y - 20, w, h + 20);
             }
-            btn.frame = CGRectMake(x, y, w, h);
-        }
+            [self bringSubviewToFront:obj];
+        }];
     }
 }
 
 @end
+
+

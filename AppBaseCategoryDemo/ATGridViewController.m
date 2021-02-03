@@ -51,5 +51,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    UIViewController *vc = [[BaseViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

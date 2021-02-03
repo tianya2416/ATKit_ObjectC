@@ -10,12 +10,34 @@
 #import "BaseNavigationController.h"
 #import "ViewController.h"
 #import "ATKit.h"
-@interface BaseTabBarController ()<UITabBarControllerDelegate>
+#import "BaseTabbarView.h"
+@interface BaseTabBarController ()<UITabBarControllerDelegate,BaseTabbarDelegate>
 @property (nonatomic, strong) NSMutableArray *nvcDatas;
+
+@property (nonatomic, strong) BaseTabbarView *tabbarView;
 @end
 
 @implementation BaseTabBarController
-
+- (BaseTabbarView *)tabbarView{
+    if (!_tabbarView) {
+        UITabBarItem *item1 = [self item:@"首页" :@"tabBar_icon_contrast_default" :@"tabBar_icon_contrast" :ViewController.new];
+        //UITabBarItem *item2 = [self item:@"发现" :@"tabBar_publish_icon" :@"tabBar_publish_icon" :BaseViewController.new];
+        UITabBarItem *item3 = [self item:@"我的" :@"tabBar_icon_mine_default" :@"tabBar_icon_mine" :BaseViewController.new];
+        _tabbarView = [BaseTabbarView tabbar:@[item1,item3] centerItem:@"tabBar_publish_icon"];
+        _tabbarView.tabbarDelegate =self;
+    }
+    return _tabbarView;
+}
+- (UITabBarItem *)item:(NSString *)title :(NSString *)image :(NSString *)selectedImage :controller{
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:title image:[UIImage imageNamed:image] selectedImage:[UIImage imageNamed:selectedImage]];
+    [self vcName:controller title:title];
+    return  item;
+}
+- (void)vcName:(UIViewController *)childVc title:(NSString *)title{
+    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:childVc];
+    [childVc showNavTitle:title];
+    [self.nvcDatas addObject:nav];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate = self;
@@ -23,71 +45,24 @@
     [self loadUI];
 }
 - (void)loadUI{
-    ViewController *home = [[ViewController alloc] init];
-    home.view.backgroundColor = [UIColor whiteColor];
-    [self vcName:home title:@"首页" imageNormal:@"tabBar_icon_schedule_default" selectedImageName:@"tabBar_icon_schedule"];
-    
-    UIViewController *customer = [[UIViewController alloc] init];
-    [self vcName:customer title:@"客户" imageNormal:@"tabBar_icon_customer_default" selectedImageName:@"tabBar_icon_customer"];
-    customer.view.backgroundColor = [UIColor whiteColor];
-    UIViewController *insurance = [[UIViewController alloc] init];
-    [self addPublishButton];
-    [self vcName:insurance title:@"发布" imageNormal:@"" selectedImageName:@""];
-    
-    UIViewController *compare = [[UIViewController alloc] init];
-    [self vcName:compare title:@"产品" imageNormal:@"tabBar_icon_contrast_default" selectedImageName:@"tabBar_icon_contrast"];
-    compare.view.backgroundColor = [UIColor whiteColor];
-    UIViewController *profile = [[UIViewController alloc]init];
-    [self vcName:profile title:@"我的" imageNormal:@"tabBar_icon_mine_default" selectedImageName:@"tabBar_icon_mine"];
-    profile.view.backgroundColor = [UIColor whiteColor];
-    self.viewControllers = self.nvcDatas.copy;
-
-}
-- (void)buttonClickAction{
-    
-}
-- (void)vcName:(UIViewController *)childVc title:(NSString *)title imageNormal:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
-    // 设置标题
-    childVc.tabBarItem.title = title;
-    childVc.title = title;
-    // 设置图标
-    childVc.tabBarItem.image = [UIImage imageNamed:imageName];
-    // 设置选中的图标
-    UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
-    // 不要渲染
-    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childVc.tabBarItem.selectedImage = selectedImage;
-    // 添加为tabbar控制器的子控制器
-    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:childVc];
-    [self.nvcDatas addObject:nav];
+    [self setValue:self.tabbarView forKey:@"tabBar"];
+    self.viewControllers = self.nvcDatas;
 }
 #pragma UITabBarControllerDelegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    
+
 }
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-    return ![viewController.title isEqualToString:@"发布"];
-}
-//添加中间按钮
-- (void)addPublishButton
-{
-    UIImage *image = [UIImage imageNamed:@"tabBar_publish_icon"];
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:image forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(buttonClickAction) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
-    CGPoint center = self.tabBar.center;
-    center.y = center.y - 15 - ([self at_iphoneX] ? 32 : 0);
-    button.center = center;
-    [self.view addSubview:button];
+- (void)buttonClickAction{
+    UIViewController *customer = [[BaseViewController alloc] init];
+    BaseNavigationController *nvc = [[BaseNavigationController alloc] initWithRootViewController:customer];
+    [UIViewController.rootTopPresentedController presentViewController:nvc animated:true completion:nil];
 }
 
-- (BOOL)at_iphoneX{
-    
-    if (@available(iOS 11.0, *)) {
-        UIEdgeInsets at_inset = [UIApplication sharedApplication].delegate.window.safeAreaInsets;
-        return at_inset.bottom > 0 ? true : false;  //34 or 21
-    }
-    return NO;
+#pragma mark BaseTabbarDelegate
+- (void)tabbarView:(BaseTabbarView *)tabbarView index:(NSInteger)index{
+    self.selectedIndex = index;
+}
+- (void)tabbarView:(BaseTabbarView *)tabbarView click:(BOOL)click{
+    [self buttonClickAction];
 }
 @end

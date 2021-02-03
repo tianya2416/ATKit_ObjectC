@@ -26,10 +26,8 @@
 #pragma mark UINavigationControllerDelegate
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.pushing == YES) {
-        NSLog(@"被拦截");
         return;
     } else {
-        NSLog(@"push");
         self.pushing = YES;
     }
     [super pushViewController:viewController animated:animated];

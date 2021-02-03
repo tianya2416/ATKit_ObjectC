@@ -14,19 +14,20 @@
 
 @interface ViewController ()
 @property (nonatomic) NSMutableArray *listData;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     self.view.backgroundColor = [UIColor whiteColor];
-    [self showNavTitle:@"首页" backItem:YES];
+    [self showNavTitle:@"首页" backItem:false];
     self.listData = @[].mutableCopy;
     [self.listData addSafeObject:@"push"];
     [self.listData addSafeObject:@"present"];
     [self.listData addSafeObject:@"本地推送测试"];
+    [self.listData addSafeObject:@"定时器"];
     [self.tableView reloadData];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -49,7 +50,8 @@
     NSString *title = self.listData[indexPath.row];
     if ([title isEqualToString:@"push"]) {
 
-        UIViewController *vc = [[UIViewController alloc] init];
+        BaseViewController *vc = [[BaseViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = true;
         [[UIViewController rootTopPresentedController].navigationController pushViewController:vc animated:YES];
         [vc showNavTitle:title backItem:YES];
         vc.view.backgroundColor = [UIColor whiteColor];
@@ -59,8 +61,21 @@
         [[UIViewController rootTopPresentedController] presentViewController:nvc animated:YES completion:nil];
         vc.view.backgroundColor = [UIColor whiteColor];
         [vc showNavTitle:title backItem:YES];
-    }else{
+    }else if([title isEqualToString:@"本地推送测试"]){
         [self addLocalNotice];
+    }else{
+        __block int time = 100;
+        [self.timer invalidate];
+        self.timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            time = time - 1;
+             
+            NSLog(@"=============%@",@(time));
+            if (time <= 0) {
+                [timer invalidate];
+                NSLog(@"=============%@==========",@(time));
+            }
+        }];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
     }
 }
 - (void)addLocalNotice {

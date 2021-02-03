@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-@class BaseTabbarView;
 NS_ASSUME_NONNULL_BEGIN
+@class BaseTabbarView;
+
 @protocol BaseTabbarDelegate <NSObject>
 
-- (void)tabbarView:(BaseTabbarView *)tabbarView didSelect:(NSInteger)didSelect;
+- (void)tabbarView:(BaseTabbarView *)tabbarView index:(NSInteger)index;
+- (void)tabbarView:(BaseTabbarView *)tabbarView click:(BOOL)click;
 
 @end
-@interface BaseTabbarView : UIView
-+(instancetype)tabbar:(NSArray <UITabBarItem *>*)tabbarItems delegate:(id <BaseTabbarDelegate>)delegate;
-@end
 
+@interface BaseTabbarView : UITabBar
++(instancetype)tabbar:(NSArray <UITabBarItem *>*)tabbarItems;
+//tabbarItems 需要偶数
++(instancetype)tabbar:(NSArray <UITabBarItem *>*)tabbarItems centerItem:(NSString * _Nullable)centerItem;
+@property (assign, nonatomic) id<BaseTabbarDelegate>tabbarDelegate;
+@end
 NS_ASSUME_NONNULL_END
